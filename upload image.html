@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Reports / Certificates</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 50px 20px;
+      color: #2c3e50;
+    }
+
+    .upload-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1a2a6c;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input[type="text"], select, input[type="file"] {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .radio-group label {
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 16px;
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005ecc;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media screen and (max-width: 600px) {
+      .upload-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-container">
+    <h2><i class="fas fa-upload"></i> Upload Reports / Certificates</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Enter your name" required />
+
+      <select name="role" required>
+        <option value="" disabled selected>Select your role</option>
+        <option value="faculty">Faculty</option>
+        <option value="student">Student</option>
+      </select>
+
+      <div class="radio-group">
+        <label><input type="radio" name="pdfType" value="Research Paper" required /> Research Paper</label>
+        <label><input type="radio" name="pdfType" value="Certificate" /> Certificate</label>
+        <label><input type="radio" name="pdfType" value="Project Report" /> Project Report</label>
+        <label><input type="radio" name="pdfType" value="Internship Letter" /> Internship Letter</label>
+        <label><input type="radio" name="pdfType" value="Others" /> Others</label>
+      </div>
+
+      <input type="file" name="report" accept=".pdf,.doc,.docx,.jpg,.png" required />
+
+      <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+    </form>
+    <p class="note">Supported formats: PDF, DOC, DOCX, JPG, PNG</p>
+  </div>
+
+</body>
+</html>

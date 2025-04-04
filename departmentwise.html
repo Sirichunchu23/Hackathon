@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Department-wise Performance Clustering</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    #chart-container {
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Department-wise Performance Clustering</h2>
+  <div id="chart-container">
+    <canvas id="clusterChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('clusterChart').getContext('2d');
+
+    const clusterData = {
+      datasets: [
+        {
+          label: 'Cluster 1 - Top Performers',
+          data: [
+            { x: 92, y: 60, dept: 'CSE' },
+            { x: 94, y: 70, dept: 'AIML' }
+          ],
+          backgroundColor: '#1abc9c'
+        },
+        {
+          label: 'Cluster 2 - Mid Performers',
+          data: [
+            { x: 85, y: 40, dept: 'ECE' },
+            { x: 88, y: 50, dept: 'IT' },
+            { x: 82, y: 35, dept: 'EEE' }
+          ],
+          backgroundColor: '#3498db'
+        },
+        {
+          label: 'Cluster 3 - Low Performers',
+          data: [
+            { x: 75, y: 30, dept: 'MECH' },
+            { x: 78, y: 25, dept: 'CIVIL' }
+          ],
+          backgroundColor: '#e74c3c'
+        }
+      ]
+    };
+
+    const clusterChart = new Chart(ctx, {
+      type: 'scatter',
+      data: clusterData,
+      options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const dept = context.raw.dept;
+                const pass = context.raw.x;
+                const research = context.raw.y;
+                return dept + ' - Pass: ' + pass + '%, Research: ' + research;
+              }
+            }
+          },
+          legend: {
+            labels: {
+              color: '#333',
+              font: {
+                size: 14
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Pass Percentage (%)',
+              color: '#555',
+              font: {
+                size: 16
+              }
+            },
+            ticks: { color: '#333' }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Research Output',
+              color: '#555',
+              font: {
+                size: 16
+              }
+            },
+            ticks: { color: '#333' }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

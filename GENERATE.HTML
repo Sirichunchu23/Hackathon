@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Financial Statement - Computer Science</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 40px;
+      background: #f4f6f8;
+      color: #2c3e50;
+    }
+
+    .statement-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1a2a6c;
+    }
+
+    .info {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    .info p {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #0f2027;
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .print-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1a2a6c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .print-btn:hover {
+      background-color: #0f2027;
+    }
+
+    @media print {
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="statement-container">
+    <h1>SR University</h1>
+    <h2>Department Financial Statement</h2>
+
+    <div class="info">
+      <p><span class="highlight">Department:</span> Computer Science</p>
+      <p><span class="highlight">Fiscal Year:</span> 2024-2025</p>
+      <p><span class="highlight">Total Budget Allocated:</span> ₹50,00,000</p>
+      <p><span class="highlight">Expenditure To Date:</span> ₹42,00,000</p>
+      <p><span class="highlight">Remaining Budget:</span> ₹8,00,000</p>
+      <p><span class="highlight">Remarks:</span> Within allocated limits. Funds primarily used for lab upgrades, software licenses, and academic events.</p>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print Statement</button>
+
+    <div class="footer">
+      Generated on: <span id="date"></span><br>
+      This is a system-generated document.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("date").textContent = new Date().toLocaleDateString();
+  </script>
+
+</body>
+</html>

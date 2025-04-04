@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Overview - Academic Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 40px 20px;
+      color: #2c5040;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 50px;
+      color: #1a2f6c;
+    }
+
+    .summary {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(20, 111, 59, 0.42);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(31, 135, 88, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .summary h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #0f2027;
+    }
+
+    .summary p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      color: #1b2e21;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    .generate-btn {
+      background-color: #1a6c3c;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .generate-btn:hover {
+      background-color: #0f271d;
+    }
+
+    @media screen and (max-width: 600px) {
+      h2 {
+        font-size: 26px;
+      }
+
+      .summary p {
+        font-size: 16px;
+      }
+
+      .card p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Financial Statement Overview</h2>
+
+  <div class="summary">
+    <h3>Total Budget Summary</h3>
+    <p>Allocated: ₹1.95 Cr | Spent: ₹1.71 Cr | Remaining: ₹24 Lakh</p>
+  </div>
+
+  <div class="dashboard">
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.JoERwubUivaAwFZJy1U_ygHaDT&pid=Api&P=0&h=180" alt="CSE Infrastructure">
+      <div class="card-content">
+        <h3>Computer Science</h3>
+        <p><strong>Allocated:</strong> ₹50,00,000</p>
+        <p><strong>Spent:</strong> ₹42,00,000</p>
+        <p><strong>Remaining:</strong> ₹8,00,000</p>
+        <A href="GENERATE.HTML"><button class="generate-btn" onclick="generateReport('Computer Science')">
+          <i class="fas fa-file-download"></i> Generate Statement
+        </button></A>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.zLHYxtMGkn08gv00FVuwHgHaE7&pid=Api&P=0&h=180" alt="Mechanical Infra">
+      <div class="card-content">
+        <h3>Mechanical Engg.</h3>
+        <p><strong>Allocated:</strong> ₹40,00,000</p>
+        <p><strong>Spent:</strong> ₹34,50,000</p>
+        <p><strong>Remaining:</strong> ₹5,50,000</p>
+        <button class="generate-btn" onclick="generateReport('Mechanical Engineering')">
+          <i class="fas fa-file-download"></i> Generate Statement
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.WK8CeL_esnyjsNvlENtW_QHaFP&pid=Api&P=0&h=180" alt="Electrical Infra">
+      <div class="card-content">
+        <h3>Electrical Engg.</h3>
+        <p><strong>Allocated:</strong> ₹35,00,000</p>
+        <p><strong>Spent:</strong> ₹30,00,000</p>
+        <p><strong>Remaining:</strong> ₹5,00,000</p>
+        <button class="generate-btn" onclick="generateReport('Electrical Engineering')">
+          <i class="fas fa-file-download"></i> Generate Statement
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.l1I2kfU1tRfy5YnTzDOHPAAAAA&pid=Api&P=0&h=180" alt="Civil Infra">
+      <div class="card-content">
+        <h3>Civil Engg.</h3>
+        <p><strong>Allocated:</strong> ₹32,00,000</p>
+        <p><strong>Spent:</strong> ₹28,75,000</p>
+        <p><strong>Remaining:</strong> ₹3,25,000</p>
+        <button class="generate-btn" onclick="generateReport('Civil Engineering')">
+          <i class="fas fa-file-download"></i> Generate Statement
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.nPtrKPsGh8qDMFjRrDYndgHaEK&pid=Api&P=0&h=180" alt="ECE Infra">
+      <div class="card-content">
+        <h3>Electronics & Comm.</h3>
+        <p><strong>Allocated:</strong> ₹38,00,000</p>
+        <p><strong>Spent:</strong> ₹36,00,000</p>
+        <p><strong>Remaining:</strong> ₹2,00,000</p>
+        <button class="generate-btn" onclick="generateReport('Electronics & Communication')">
+          <i class="fas fa-file-download"></i> Generate Statement
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generateReport(department) {
+      alert(`Generating financial statement for ${department}...`);
+      // In real usage: generate a PDF, open a print dialog, or export a file.
+    }
+  </script>
+
+</body>
+</html>

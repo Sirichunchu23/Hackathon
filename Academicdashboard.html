@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academic Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }
+
+    .navbar {
+      background-color: #2C3E50;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .navbar h2 {
+      margin: 0;
+    }
+
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container h2 {
+      margin-bottom: 10px;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      width: 280px;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background-color: #1ABC9C;
+      color: white;
+    }
+
+    .card i {
+      font-size: 50px;
+      margin-bottom: 15px;
+      color: #1ABC9C;
+    }
+
+    .card:hover i {
+      color: white;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #666;
+    }
+
+    .card:hover p {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2>Academic Dashboard</h2>
+  </nav>
+
+  <div class="container">
+    <h2>Academic Summary</h2>
+    <p>Explore academic performance, top achievers, and subject-level analysis.</p>
+
+    <div class="dashboard">
+      <div class="card" onclick="location.href='selection.html'">
+        <i class="fas fa-medal"></i>
+        <h3>Toppers</h3>
+        <p>View top-performing students by department or year.</p>
+      </div>
+
+      <div class="card" onclick="location.href='pass-percentage.html'">
+        <i class="fas fa-percent"></i>
+        <h3>Pass Percentage</h3>
+        <p>Check department-wise and overall passing stats.</p>
+      </div>
+
+      <div class="card" onclick="location.href='subject-performance.html'">
+        <i class="fas fa-book-open"></i>
+        <h3>Subject-wise Performance</h3>
+        <p>Analyze student performance across subjects.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

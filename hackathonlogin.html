@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        /* First page styling */
+        .first-page {
+            background-image: url('https://digitallearning.eletsonline.com/wp-content/uploads/2020/06/infrastructure.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heading {
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: #1e4824;
+        }
+
+        /* Second page styling */
+        .second-page {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 60px;
+        }
+
+        /* Centered container styling */
+        .container {
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+
+        .image-size {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .login_button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .login_button:hover {
+            background-color: #037a4f;
+        }
+
+        form {
+            padding: 10px;
+        }
+
+        .container2 {
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .cancelbtn:hover {
+            background-color: #c23527;
+        }
+
+        span.psw {
+            display: block;
+            padding-top: 16px;
+            text-align: right;
+        }
+
+        h2.login-title {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- First page with job portal login link -->
+    <div class="first-page">
+        <h2 class="heading">
+            <a href="#section1" onclick="document.getElementById('section1').style.display='flex'">Login</a>
+        </h2>
+    </div>
+
+    <!-- Second page (login form) -->
+    <section>
+        <div id="section1" class="second-page">
+            <div class="container">
+                <div class="avatar">
+                    <img src="https://www.uptexas.org/ImageRepository/Document?documentID=1223" alt="avatar" class="image-size">
+                </div>
+                <h2 class="login-title">User Login</h2>
+                <form action="hacakathon.html">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required
+                        style="width: 100%; padding: 10px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid #ccc;">
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required
+                        style="width: 100%; padding: 10px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid #ccc;">
+
+                    <button type="submit" class="login_button">Login</button>
+
+                    <label style="display: block; margin-top: 15px;">
+                        <input type="checkbox" checked="checked" name="remember"> Remember Me
+                    </label>
+                </form>
+                <div class="container2">
+                    <button type="button" onclick="document.getElementById('section1').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#" style="color: blue;">password?</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var secondPage = document.getElementById('section1');
+        window.onclick = function (event) {
+            if (event.target == secondPage) {
+                secondPage.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

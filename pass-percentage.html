@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pass Percentage - Academic Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2C3E50;
+      margin-bottom: 30px;
+    }
+
+    .table-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #1ABC9C;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .overall {
+      font-weight: bold;
+      color: #2C3E50;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Department-wise Pass Percentage</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>Total Students</th>
+          <th>Students Passed</th>
+          <th>Pass Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Computer Science</td>
+          <td>120</td>
+          <td>110</td>
+          <td>91.67%</td>
+        </tr>
+        <tr>
+          <td>Mechanical Engineering</td>
+          <td>100</td>
+          <td>88</td>
+          <td>88.00%</td>
+        </tr>
+        <tr>
+          <td>Electrical Engineering</td>
+          <td>90</td>
+          <td>78</td>
+          <td>86.67%</td>
+        </tr>
+        <tr>
+          <td>Civil Engineering</td>
+          <td>85</td>
+          <td>76</td>
+          <td>89.41%</td>
+        </tr>
+        <tr>
+          <td>Electronics & Comm.</td>
+          <td>95</td>
+          <td>90</td>
+          <td>94.74%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="overall">Overall Pass Percentage: <strong>90.5%</strong></p>
+  </div>
+
+</body>
+</html>

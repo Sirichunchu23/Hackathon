@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Department Choice Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      margin: 0;
+      padding: 40px 20px;
+      color: #1e3a5f;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+      color: #0d47a1;
+    }
+
+    .charts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .chart-container {
+      width: 400px;
+      max-width: 90%;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .charts {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Department Preferences</h2>
+
+  <div class="charts">
+    <!-- Pie Chart -->
+    <div class="chart-container">
+      <h3 style="text-align:center;">Department Distribution (Pie)</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="chart-container">
+      <h3 style="text-align:center;">Department Selection (Bar)</h3>
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const departments = [
+      'Computer Science',
+      'Mechanical Engg.',
+      'Civil Engg.',
+      'Electrical Engg.',
+      'Electronics & Comm.',
+      'Artificial Intelligence',
+      'Data Science'
+    ];
+
+    const studentCounts = [180, 120, 90, 100, 95, 150, 130];
+
+    // Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: departments,
+        datasets: [{
+          data: studentCounts,
+          backgroundColor: [
+            '#42a5f5', '#ef5350', '#66bb6a', '#ffa726',
+            '#ab47bc', '#26a69a', '#ffca28'
+          ],
+          borderColor: '#fff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Bar Chart
+    new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: departments,
+        datasets: [{
+          label: 'Number of Students',
+          data: studentCounts,
+          backgroundColor: '#1e88e5',
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 20
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

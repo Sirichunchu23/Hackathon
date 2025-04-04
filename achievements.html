@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements - Academic Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2C3E50;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #1ABC9C;
+    }
+
+    .card p {
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .icon {
+      color: #1ABC9C;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Faculty & Student Achievements</h2>
+
+  <!-- Faculty Section -->
+  <div class="section">
+    <h3 style="color:#34495E">👨‍🏫 Faculty Achievements</h3>
+    <div class="cards">
+      <div class="card">
+        <a href="https://ieeexplore.ieee.org/document/9154130"><h3><i class="fas fa-award icon"></i> Best Research Paper Award</h3></a>
+        <p>Dr. A. Kumar received "Best Research Paper" at IEEE ICAC 2024 for work on Machine Learning.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-chalkboard-teacher icon"></i> International Conference Speaker</h3>
+        <p>Prof. R. Sharma was invited speaker at the Global Education Summit in Singapore, 2023.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-book icon"></i> Book Publication</h3>
+        <p>Dr. Meera authored a textbook on "Cloud Computing Essentials" published by Springer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Section -->
+  <div class="section">
+    <h3 style="color:#34495E">🎓 Student Achievements</h3>
+    <div class="cards">
+      <div class="card">
+        <h3><i class="fas fa-code icon"></i> Hackathon Winners</h3>
+        <p>Team "CodeCrafters" won 1st place at National Hackathon 2024 held at IIT Delhi.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-trophy icon"></i> GATE Topper</h3>
+        <p>Anjali Sharma secured AIR 54 in GATE 2024 (Computer Science Stream).</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-globe icon"></i> International Internship</h3>
+        <p>Rahul Jain completed a remote internship with Amazon AWS, USA for 3 months.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-robot icon"></i> Robotics Championship</h3>
+        <p>Robotics Club won 2nd prize at National Robotics Challenge, Hyderabad.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Version History</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      padding: 40px;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a237e;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+      max-width: 800px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #0072ff;
+      transform: translateX(-50%);
+    }
+
+    .entry {
+      position: relative;
+      width: 50%;
+      padding: 20px 30px;
+      box-sizing: border-box;
+    }
+
+    .entry.left {
+      left: 0;
+    }
+
+    .entry.right {
+      left: 50%;
+    }
+
+    .entry::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0072ff;
+      border: 4px solid white;
+      z-index: 1;
+    }
+
+    .entry.left::before {
+      right: -10px;
+    }
+
+    .entry.right::before {
+      left: -10px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #1a237e;
+    }
+
+    .card p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 13px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .approved {
+      background-color: #c8f7c5;
+      color: #2e7d32;
+    }
+
+    .pending {
+      background-color: #fff3cd;
+      color: #b9770e;
+    }
+
+    .rejected {
+      background-color: #f8d7da;
+      color: #b02a37;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 8px;
+      }
+
+      .entry {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 20px;
+        margin-bottom: 30px;
+      }
+
+      .entry.left, .entry.right {
+        left: 0;
+      }
+
+      .entry::before {
+        left: 0;
+        top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Version History & Approvals</h2>
+
+  <div class="timeline">
+    <div class="entry left">
+      <div class="card">
+        <h3>Version 1.0</h3>
+        <p><strong>Edited by:</strong> Dr. S. Reddy</p>
+        <p><strong>Date:</strong> March 15, 2025</p>
+        <p>Initial upload of research paper on AI-driven robotics.</p>
+        <span class="status approved">Approved</span>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <div class="card">
+        <h3>Version 1.1</h3>
+        <p><strong>Edited by:</strong> Prof. Kavitha</p>
+        <p><strong>Date:</strong> March 25, 2025</p>
+        <p>Corrected formatting and added new references.</p>
+        <span class="status pending">Pending Approval</span>
+      </div>
+    </div>
+
+    <div class="entry left">
+      <div class="card">
+        <h3>Version 1.2</h3>
+        <p><strong>Edited by:</strong> Student: Ravi Kumar</p>
+        <p><strong>Date:</strong> April 2, 2025</p>
+        <p>Uploaded final certificate for internship project.</p>
+        <span class="status approved">Approved</span>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <div class="card">
+        <h3>Version 1.3</h3>
+        <p><strong>Edited by:</strong> Faculty: Dr. Anita Mehta</p>
+        <p><strong>Date:</strong> April 4, 2025</p>
+        <p>Removed unverified attachments.</p>
+        <span class="status rejected">Rejected</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
